@@ -1,0 +1,25 @@
+{
+    "name": "영한 번역 extension",
+    "description": "나의 첫번째 Extension",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": [
+        "contextMenus",
+        "storage"
+    ],
+    "options_ui": {
+        "chrome_style": true,
+        "page": "options.html"
+    },
+    "icons": {
+        "16": "icons/icon_16.png",
+        "48": "icons/icon_48.png",
+        "128": "icons/icon_128.png"
+    }
+}
