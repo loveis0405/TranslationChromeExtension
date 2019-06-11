@@ -1,4 +1,5 @@
 var targetLang = "ko";
+var apiKey = ""; // 요기에 키를 넣어야 동작해여
 
 function createContextMenus() {
     selectionContextMenuId = chrome.contextMenus.create({
@@ -14,7 +15,7 @@ function sendSelectedText(info, tab) {
         if (data != undefined) {
             targetLang = data.code;
         }
-        var url = "https://translation.googleapis.com/language/translate/v2?key=AIzaSyAi0pVBUrEk__AohRHWYV09y8AIPeCYUTw&q="+text+"&format=text&target=" + targetLang;
+        var url = "https://translation.googleapis.com/language/translate/v2?key=" + apiKey + "&q="+text+"&format=text&target=" + targetLang;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, false);
         xhr.send();  
