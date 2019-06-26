@@ -11,14 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
             updateLanguage("en");
         })
     });
-    init();
-});
-
-function init() {
     chrome.storage.sync.get("code", function(data) {
         updateLanguage(data.code);
     })
-}
+});
 
 function updateLanguage(code) {
     if (code == "ko") {
@@ -27,7 +23,7 @@ function updateLanguage(code) {
         document.getElementById("currLanguage").innerHTML = "설정: [영어]"        
     }
     chrome.runtime.sendMessage({
-        msg: "updateLanguage",
-        code: code
+        cmd: "updateLanguage",
+        data: code
     });
 }
